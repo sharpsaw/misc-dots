@@ -3,9 +3,11 @@ export PERL_BADLANG="0"
 export EDITOR=vim
 export PAGER=less
 
-# path-prepend $HOME/.../bin
-# path-prepend $HOME/bin
-# path-prepend ./bin
+export OS=$(perl -e 'print $^O')
+
+if [ $OS == 'linux' ]; then
+    source $HOME/.sh/misc/linux
+fi
 
 umask 022
 
